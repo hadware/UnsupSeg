@@ -48,7 +48,7 @@ class Solver(LightningModule):
             "test":  StatsMeter()
         })
 
-        wandb.init(project=self.hp.project, name=hp.exp_name, config=vars(hp), tags=[hp.tag])
+        # wandb.init(project=self.hp.project, name=hp.exp_name, config=vars(hp), tags=[hp.tag])
         self.build_model()
 
     def prepare_data(self):
@@ -187,7 +187,7 @@ class Solver(LightningModule):
         for k, v in metrics.items():
             print(f"\t{k:<30} -- {v}")
         line()
-        wandb.log(metrics)
+        # wandb.log(metrics)
 
         output = OrderedDict({
             'log': metrics

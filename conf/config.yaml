@@ -1,11 +1,12 @@
 hydra:
   run:
-    dir: /data/felix/runs/unsupervised_segmentor/${now:%Y-%m-%d_%H-%M-%S}-${exp_name}
+    dir: /home/htiteux/Code/UnsupSeg
 
 # DATA
-libri_path: /data/felix/datasets/librispeech
+libri_path: /scratch1/data/derived_data/HD_PARK_HOSPITAL/other/timit_sampa/
 buckeye_path: /data/felix/datasets/buckeye_processed_by_speaker_balanced
-timit_path: /data/felix/datasets/timit
+timit_path: /scratch1/data/derived_data/HD_PARK_HOSPITAL/other/timit_sampa_5s/
+#timit_path: /scratch2/htiteux/timit/
 libri_subset: train-clean-100
 libri_percent: 1.0
 buckeye_percent: 1.0
@@ -26,7 +27,7 @@ latent_dim: 0  # latent dimension of encoder
 n_negatives: 1  # number of negative samples for contrastive loss
 
 # MISC
-gpus: 1 
+gpus: 0
 tag: default
 exp_name: default
 project: unsupervised_segmentor

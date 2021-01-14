@@ -53,7 +53,8 @@ def main(cfg):
         fast_dev_run=cfg.dev_run,
         max_epochs=cfg.epochs
     )
-
+    
+    print("Chosen GPU : " + str(torch.cuda.current_device()))
     if cfg.ckpt is not None:
         ckpt = cfg.ckpt
     else:
