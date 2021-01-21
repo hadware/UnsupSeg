@@ -7,5 +7,8 @@ for split in ("train", "val", "test"):
     split_path = dataset_path / Path(split)
     
     dataset = WavPhnDataset(str(split_path))
-    for i, s in enumerate(dataset):
-        print(f"{split} : {i} OK")
+    for i, (audio, times, phonemes, wav_path) in enumerate(dataset):
+        if phonemes:
+            print(f"{split} : {i} OK")
+        else:
+            print(f"Empty phonemes for {wav_path}")
